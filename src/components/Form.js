@@ -1,11 +1,18 @@
-import React from 'react';
 import './Form.css';
+import React from 'react';
+import { useState } from 'react';
 
-function Form(props) {
+function Form() {
+  const [inputName, setinputName] = useState('');
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('submit clicked');
-    props.
+    setinputName(''); // reset value
+  };
+
+  const nameHandler = (e) => {
+    // console.log('input value', e.target.value);
+    setinputName(e.target.value);
   };
 
   return (
@@ -15,7 +22,12 @@ function Form(props) {
         <label className="input" htmlFor="name">
           Name
         </label>
-        <input className="input" type="text" />
+        <input
+          className="input"
+          type="text"
+          onChange={nameHandler}
+          value={inputName}
+        />
         <input className="input" type="submit" />
       </form>
     </div>
