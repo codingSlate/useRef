@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 
 function Form() {
-  const [inputName, setinputName] = useState('');
+  const [inputName, setinputName] = useState('Enter Name');
 
   const submitHandler = (e) => {
     e.preventDefault();
